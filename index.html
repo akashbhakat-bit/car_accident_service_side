@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Accident -Hospital</title>
+  
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+  
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+  
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+
+<script>
+   // Your web app's Firebase configuration
+   var firebaseConfig = {
+    apiKey: "AIzaSyAIIKhy_IkGvofz1hmfvDAHGiAk9NPx3Tc",
+    authDomain: "caraccident-2f136.firebaseapp.com",
+    databaseURL: "https://caraccident-2f136-default-rtdb.firebaseio.com",
+    projectId: "caraccident-2f136",
+    storageBucket: "caraccident-2f136.appspot.com",
+    messagingSenderId: "764399515443",
+    appId: "1:764399515443:web:d0519fd6e907356f49b046"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link id="theme" rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script src="index.js" defer></script>
+<script src="script.js" defer></script>
+  
+<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link id="theme" rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script src="index.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+<link
+  rel="stylesheet"
+  href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+  type="text/css"
+/>
+<style>
+ body {
+    background-color: #F3EBF6;
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url('https://thumbs.dreamstime.com/z/vector-illustration-hospital-white-background-hospital-vector-illustration-white-background-165066881.jpg');
+
+background-size: cover;
+}
+
+.main {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 400px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+    padding-top: 40px;
+    color: #8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.un {
+width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+form.form1 {
+    padding-top: 40px;
+}
+
+.pass {
+        width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    
+}
+
+.submit {
+  cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.forgot {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    padding-top: 15px;
+}
+
+a {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    text-decoration: none
+}
+
+@media (max-width: 600px) {
+    .main {
+        border-radius: 0px;
+    }
+    
+.menuof     
+{    
+display: none;    
+}    
+
+.menuon    
+{    
+display: block;    
+}  
+
+
+</style>
+</head>
+
+<body onload="myFunction()">
+    
+<div id="Authentication">
+<div id="login_part" >
+<center>
+    Login
+  </center>
+
+
+<div id="login_div" >
+    <form class="form1">
+      <input class="un " type="text" align="center" placeholder="Name" id="name_field">
+
+      <input class="un " type="text" align="center" placeholder="Username" id="email_field">
+      <input class="pass" type="password" align="center" placeholder="Password" id="password_field">
+      <a class="submit" align="center" name="login_btn"onsubmit="return false"  onclick="login()" >Log in</a>
+      <p class="forgot" align="center" onclick="showSignUp()" >Dont have an Account ? Click here</p>
+    </form>
+</div>
+
+</div>
+    
+                          
+
+                          <div id="signup_div" class="menuof">
+                                <form class="form1">
+                                    <label>Service Full Name</label>
+                                    <input class="form-control" type="text" name="fullname" id="fullname" autocomplete="off" required />
+                                    
+
+
+                                    <label>Mobile Number </label>
+                                    <input class="form-control" type="text" name="mobileno" id="mobileno" maxlength="10" autocomplete="off" required />
+                                                
+                                    <label>Patients Strenght</label>
+                                    <input class="form-control" type="text" name="age" id="age"   autocomplete="off" required  />
+                                    <span id="user-availability-status" style="font-size:12px;"></span> 
+
+                                                
+                                    <label>Email id</label>
+                                    <input class="form-control" type="email" name="email" id="sign_email"   autocomplete="off" required  />
+                                    <span id="user-availability-status" style="font-size:12px;"></span> 
+                                    
+                                      <label>Enter Longitude</label>
+                                      <input class="form-control"  type="text" name="car_name" id="car_name" autocomplete="off" required  />
+                                      
+                                        <label>Enter Latitude</label>
+                                        <input class="form-control"  type="text" name="car_number" id="car_number" autocomplete="off" required  />
+                                      
+                                          <label>Registering As</label>
+                                          <select id="select_user" name="personnel">
+                                            <option value="Citizen">Hospital</option>
+                                            <option value="Hospital"style="display:none;">Hospital</option>
+                                            
+                                            </select>                                          
+
+                                    <label>Password</label>
+                                    <input class="form-control" type="password" name="password"id="sign_password"  autocomplete="off" required  />
+
+                                    <label>Confirm Password </label>
+                                    <input class="form-control"  type="password" name="confirmpassword" id="sign_password_conf" autocomplete="off" required  />
+
+                                    
+                                                                  
+                                    <button type="button" onsubmit="return false"name="signUp"  onclick="handleSignUp()" >Register Now </button>
+
+                                </form>
+                            </div>
+</div>
+<div id="Citizen_page" class="menuof">
+
+  <div class='row'>
+    <div class='col_half'>
+  <div id='map'></div>
+</div>
+<div class='col_half'>
+  <div id='list'>
+    <div class="panel-body">
+      <ul class="chat">
+          
+          <li class="left clearfix"><span class="chat-img pull-left"></span>>
+            <div class="chat-body clearfix">
+                  <div class="header">
+                      <strong class="primary-font" id="Citizen_page_name">SOS Details</strong> <small class="pull-right text-muted">
+                          
+                        </small>
+                  </div>
+                  <p class='msg'>
+                      
+                      Patient X Latitude:<div id="patient_x_1"></div>
+                      <input type="text" id="lat" name="lat"><br><br>
+                      Patient Y Longitude:<div id="patient_y_1"></div>
+                      <input type="text" id="long" name="long"><br><br>
+                      <br><center>
+        <button style="background-color: #f44336;" onsubmit="return false"name="signUp"  onclick="respondSOS()"> RESPOND TO SOS CALLS </button>
+    </center> 
+                      Distance from Patient:<div id="patient_distance_1"></div>
+
+                      
+                  </p>
+              </div>
+          
+          </li>
+          
+        <br><center>
+          <button style="background-color: #3672f4;" onsubmit="return false"name="logout"  onclick="logout()"> LOGOUT </button>
+        </center><br>
+        <br>
+          
+      </ul>
+  </div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div id="Hospital_page" class="menuof">
+
+
+</div>
+
+
+
+</body>
+</html>

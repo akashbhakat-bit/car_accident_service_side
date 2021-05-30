@@ -1,0 +1,136 @@
+body {
+    margin-bottom: 50px;
+    margin-right: 25px;
+    margin-left: 25px;
+    background-image: url('https://i.pinimg.com/originals/d7/40/8d/d7408defce05ad59fda9c61346c1e374.jpg');
+  
+  background-size: cover;
+    }
+  
+  .row{
+    height: 100%;
+    width: 100%;
+  }
+    #map {
+  
+      height: 80vh;
+      width: 50vw;
+    }
+  
+  .col_half{
+    height: 100%;
+        width: 50%;
+        float: left;
+  
+  }
+  .container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0px 10px 0px 60px;
+  }
+  
+  .darker {
+    border-color: rgb(241, 241, 240);
+    background-color: rgb(241, 241, 240);
+  }
+  
+  .container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  
+  .container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+  }
+  
+  
+  
+  .time-left {
+    float: left;
+    color: #999;
+  }
+  
+  .chat
+  {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .chat li
+  {
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px dotted #B3A9A9;
+  }
+  
+  .chat li.left .chat-body
+  {
+      margin-left: 60px;
+  }
+  
+  .chat li.right .chat-body
+  {
+      margin-right: 60px;
+  }
+  
+  
+  .chat li .chat-body p
+  {
+      margin: 0;
+      color: #777777;
+  }
+  
+  .panel .slidedown .glyphicon, .chat .glyphicon
+  {
+      margin-right: 5px;
+  }
+  .panel-footer
+  {
+  
+    padding: 10px;
+    margin: 0px 10px 0px 60px;
+  }
+  .panel-body
+  {
+      overflow-y: scroll;
+      border: 2px solid #dedede;
+  
+      height: 100%;
+      border-color: rgb(241, 241, 240);
+    background-color: rgb(241, 241, 240);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0px 10px 0px 60px;
+  }
+  
+  ::-webkit-scrollbar-track
+  {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      background-color: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar
+  {
+      width: 12px;
+      background-color: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar-thumb
+  {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #555;
+  }s
